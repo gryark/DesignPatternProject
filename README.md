@@ -1,6 +1,6 @@
 # Kütüphane Yönetim Sistemi
 
-Bu proje, Java ile geliştirilmiş bir konsol uygulamasıdır ve bir kütüphane yönetim sistemini simüle eder. Kullanıcılar, kitap ekleme, kullanıcı kaydı ve kitap arama gibi işlemleri gerçekleştirebilir. Proje, **Singleton** tasarım kalıbını zorunlu olarak içerir ve ek olarak **Factory Method**, **Adapter**, **Facade**, **Observer** ve **Strategy** kalıplarını kullanır.
+Bu proje, Java ile geliştirilmiş bir konsol uygulamasıdır ve bir kütüphane yönetim sistemini simüle eder. Kullanıcılar, kitap ekleme, kullanıcı kaydı ve kitap arama gibi işlemleri gerçekleştirebilir. Proje, **Singleton**, **Factory Method**, **Adapter**, **Facade**, **Observer** ve **Strategy** kalıplarını kullanır.
 
 ## Proje Genel Bakış
 Kütüphane Yönetim Sistemi, kullanıcıların konsol üzerinden aşağıdaki işlemleri yapmasına olanak tanır:
