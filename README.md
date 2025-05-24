@@ -1,6 +1,6 @@
 # Kütüphane Yönetim Sistemi
 
-Bu proje, Java ile geliştirilmiş bir konsol uygulamasıdır ve bir kütüphane yönetim sistemini simüle eder. Kullanıcılar, kitap ekleme, kullanıcı kaydı ve kitap arama gibi işlemleri gerçekleştirebilir. Proje, **Singleton** tasarım kalıbını zorunlu olarak içerir ve ek olarak **Factory Method**, **Adapter**, **Facade**, **Observer** ve **Strategy** kalıplarını kullanır.
+Bu proje, Java ile geliştirilmiş bir konsol uygulamasıdır ve bir kütüphane yönetim sistemini simüle eder. Kullanıcılar, kitap ekleme, kullanıcı kaydı ve kitap arama gibi işlemleri gerçekleştirebilir. Proje, **Singleton**, **Factory Method**, **Adapter**, **Facade**, **Observer** ve **Strategy** kalıplarını kullanır.
 
 ## Proje Genel Bakış
 Kütüphane Yönetim Sistemi, kullanıcıların konsol üzerinden aşağıdaki işlemleri yapmasına olanak tanır:
@@ -12,7 +12,7 @@ Kütüphane Yönetim Sistemi, kullanıcıların konsol üzerinden aşağıdaki i
 Sistem, **Creational**, **Structural** ve **Behavioral** kategorilerden toplam altı tasarım kalıbını entegre eder:
 - **Creational**: Singleton, Factory Method
 - **Structural**: Adapter, Facade
-- **Behavioral**: Observer, Command
+- **Behavioral**: Observer, Strategy
 
 ## Menü Seçenekleri ve Kapsanan Tasarım Kalıpları
 
@@ -53,7 +53,7 @@ Aşağıda, konsol menüsündeki her seçeneğin açıklaması ve kapsadığı t
 - **Açıklama**: Kullanıcı, bir anahtar kelime ve arama türü (başlık veya yazar) girerek kitapları arar.
 - **Kapsanan Pattern'ler**:
   - **Singleton**: `LibraryFacade` içindeki `searchBooks` metodu, `LibraryDatabase.getInstance()` ile veritabanına erişir.
-  - **Command**: `SearchCommand` arayüzü, `SearchByTitleCommand` veya `SearchByAuthorCommand` komutlarını kullanarak aramayı gerçekleştirir.
+  - **Strategy**: `SearchStrategy` arayüzü, `SearchByTitle` veya `SearchByAuthor` stratejilerini kullanarak aramayı gerçekleştirir.
   - **Facade**: `LibraryFacade`, arama işlemini basit bir arayüzle sunar.
 
 ### 6. Kullanıcıları Listele
@@ -65,21 +65,21 @@ Aşağıda, konsol menüsündeki her seçeneğin açıklaması ve kapsadığı t
 
 ## Özet Tablosu
 
-| Menü Seçeneği            | Singleton | Factory Method | Adapter | Facade | Observer | Command |
-|--------------------------|-----------|----------------|---------|--------|----------|---------|
-| 1. Roman Ekle            | ✓         | ✓              |         | ✓      | ✓        |         |
-| 2. Ders Kitabı Ekle      | ✓         | ✓              |         | ✓      | ✓        |         |
-| 3. Kullanıcı Ekle        | ✓         |                |         | ✓      | ✓        |         |
-| 4. Eski Kullanıcı Ekle   | ✓         |                | ✓       | ✓      | ✓        |         |
-| 5. Kitap Ara             | ✓         |                |         | ✓      |          | ✓       |
-| 6. Kullanıcıları Listele | ✓         |                | ✓       | ✓      |          |         |
+| Menü Seçeneği            | Singleton | Factory Method | Adapter | Facade | Observer | Strategy |
+|--------------------------|-----------|----------------|---------|--------|----------|----------|
+| 1. Roman Ekle            | ✓         | ✓              |         | ✓      | ✓        |          |
+| 2. Ders Kitabı Ekle      | ✓         | ✓              |         | ✓      | ✓        |          |
+| 3. Kullanıcı Ekle        | ✓         |                |         | ✓      | ✓        |          |
+| 4. Eski Kullanıcı Ekle   | ✓         |                | ✓       | ✓      | ✓        |          |
+| 5. Kitap Ara             | ✓         |                |         | ✓      |          | ✓        |
+| 6. Kullanıcıları Listele | ✓         |                | ✓       | ✓      |          |          |
 
 ## Genel Değerlendirme
 - **Facade** ve **Singleton**, tüm menü seçeneklerinde yer alır çünkü `LibraryFacade` her işlemi koordine eder ve `LibraryDatabase` tekil bir örnek olarak kullanılır.
 - **Factory Method**, sadece kitap ekleme işlemlerinde (Roman ve Ders Kitabı) devreye girer.
 - **Adapter**, eski kullanıcı ekleme ve kullanıcı listeleme işlemlerinde kullanılır.
 - **Observer**, kitap ekleme ve kullanıcı ekleme işlemlerinde bildirim mekanizması olarak çalışır.
-- **Command**, yalnızca kitap arama işleminde kullanılır.
+- **Strategy**, yalnızca kitap arama işleminde kullanılır.
 
 ## Kurulum ve Kullanım
 1. **Gereksinimler**:
@@ -106,14 +106,7 @@ Kütüphane Yönetim Sistemi
 5. Kitap Ara
 6. Kullanıcıları Listele
 7. Çıkış
-Bir seçenek seçin: 5
-Arama anahtar kelimesini girin: 1984
-Arama türü (baslik/yazar): baslik
-Arama sonuçları:
-1984, Yazar: George Orwell
-```
-
-## Notlar
-- Proje, basit ve anlaşılır bir yapıya sahiptir.
-- Ek özellikler veya özelleştirmeler için kodda değişiklik yapılabilir.
-- Daha fazla bilgi veya destek için iletişime geçebilirsiniz.
+Bir seçenek seçin: 1
+Roman başlığını girin: 1984
+Yazarı girin: George Orwell
+Kullanıcı user123 için bildirim: Yeni kitap eklendi: 1984
