@@ -4,7 +4,7 @@
 
 **Cevap**:
 
-Projem, Java ile yazılmış bir konsol uygulaması olan Kütüphane Yönetim Sistemi’dir. Bu sistem, bir kütüphanede kitap ekleme, kullanıcı kaydetme ve kitap arama gibi işlemleri yapmamızı sağlıyor. Kullanıcılar konsolda bir menüden seçim yaparak bu işlemleri gerçekleştiriyor. Proje, ödevde istenen **Singleton** tasarım kalıbını zorunlu olarak kullanıyor ve ayrıca **Factory Method**, **Adapter**, **Facade**, **Observer** ve **Command** kalıplarını içeriyor. Şimdi bunları basitçe açıklayayım.
+Projem, Java ile yazılmış bir konsol uygulaması olan Kütüphane Yönetim Sistemi’dir. Bu sistem, bir kütüphanede kitap ekleme, kullanıcı kaydetme ve kitap arama gibi işlemleri yapmamızı sağlıyor. Kullanıcılar konsolda bir menüden seçim yaparak bu işlemleri gerçekleştiriyor. Proje, ödevde istenen **Singleton** tasarım kalıbını zorunlu olarak kullanıyor ve ayrıca **Factory Method**, **Adapter**, **Facade**, **Observer** ve **Command** kalıplarını içeriyor. Bunları basitçe açıklamak gerekirse.
 
 - **Singleton**: Sistemde tek bir veritabanı olsun istedim. `LibraryDatabase` sınıfını Singleton yaptım, böylece sadece bir tane veritabanı örneği oluyor. `getInstance()` metoduyla bu örneğe erişiliyor. Bu sayede kitaplar ve kullanıcılar hep aynı yerde tutuluyor, karışıklık olmuyor.
 
